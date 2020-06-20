@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0C9B1DC-C132-4244-83F9-F009298F012A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistema_de_estudiantes</RootNamespace>
+    <AssemblyName>Sistema de estudiantes</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.13\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ConexionDB.cs" />
+    <Compile Include="Clases\UsuarioCache.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Carreras_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Carreras_Form.Designer.cs">
+      <DependentUpon>Carreras_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Docentes_CRUD_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Docentes_CRUD_Form.Designer.cs">
+      <DependentUpon>Docentes_CRUD_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Estudiantes_CRUD_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Estudiantes_CRUD_Form.Designer.cs">
+      <DependentUpon>Estudiantes_CRUD_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Materias_CRUD_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador\Materias_CRUD_Form.Designer.cs">
+      <DependentUpon>Materias_CRUD_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Asistencias_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Asistencias_Form.Designer.cs">
+      <DependentUpon>Asistencias_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Buscador_Docentes_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Buscador_Docentes_Form.Designer.cs">
+      <DependentUpon>Buscador_Docentes_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Calificaciones_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Calificaciones_Form.Designer.cs">
+      <DependentUpon>Calificaciones_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Clases_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Clases_Form.Designer.cs">
+      <DependentUpon>Clases_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Perfil_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Docentes\Perfil_Form.Designer.cs">
+      <DependentUpon>Perfil_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Calificaciones_Estudiantes_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Calificaciones_Estudiantes_Form.Designer.cs">
+      <DependentUpon>Calificaciones_Estudiantes_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Estudiantes_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Estudiantes_Form.Designer.cs">
+      <DependentUpon>Estudiantes_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Materias_Estudiantes_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Materias_Estudiantes_Form.Designer.cs">
+      <DependentUpon>Materias_Estudiantes_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Perfil_Estudiante_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Perfil_Estudiante_Form.Designer.cs">
+      <DependentUpon>Perfil_Estudiante_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Seleccionar_Materias_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\Seleccionar_Materias_Form.Designer.cs">
+      <DependentUpon>Seleccionar_Materias_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\General\About_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\General\About_Form.Designer.cs">
+      <DependentUpon>About_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Administrador_Model.cs" />
+    <Compile Include="Modelos\Asistencias_Model.cs" />
+    <Compile Include="Modelos\Calificaciones_Model.cs" />
+    <Compile Include="Modelos\Carreras_Model.cs" />
+    <Compile Include="Modelos\Clases_Model.cs" />
+    <Compile Include="Modelos\Docentes_Model.cs" />
+    <Compile Include="Modelos\Estudiantes_Model.cs" />
+    <Compile Include="Modelos\Materias_Model.cs" />
+    <Compile Include="PanelAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelAdministrador.Designer.cs">
+      <DependentUpon>PanelAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelDocente.Designer.cs">
+      <DependentUpon>PanelDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelEstudiante.Designer.cs">
+      <DependentUpon>PanelEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador\Carreras_Form.resx">
+      <DependentUpon>Carreras_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador\Docentes_CRUD_Form.resx">
+      <DependentUpon>Docentes_CRUD_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador\Estudiantes_CRUD_Form.resx">
+      <DependentUpon>Estudiantes_CRUD_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador\Materias_CRUD_Form.resx">
+      <DependentUpon>Materias_CRUD_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Docentes\Asistencias_Form.resx">
+      <DependentUpon>Asistencias_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Docentes\Buscador_Docentes_Form.resx">
+      <DependentUpon>Buscador_Docentes_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Docentes\Calificaciones_Form.resx">
+      <DependentUpon>Calificaciones_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Docentes\Clases_Form.resx">
+      <DependentUpon>Clases_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Docentes\Perfil_Form.resx">
+      <DependentUpon>Perfil_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\Calificaciones_Estudiantes_Form.resx">
+      <DependentUpon>Calificaciones_Estudiantes_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\Estudiantes_Form.resx">
+      <DependentUpon>Estudiantes_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\Materias_Estudiantes_Form.resx">
+      <DependentUpon>Materias_Estudiantes_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\Perfil_Estudiante_Form.resx">
+      <DependentUpon>Perfil_Estudiante_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\Seleccionar_Materias_Form.resx">
+      <DependentUpon>Seleccionar_Materias_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\General\About_Form.resx">
+      <DependentUpon>About_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelAdministrador.resx">
+      <DependentUpon>PanelAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelDocente.resx">
+      <DependentUpon>PanelDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelEstudiante.resx">
+      <DependentUpon>PanelEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acerca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acerca1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
